@@ -107,7 +107,7 @@ public class User {
      */
     public void updateProfile (String firstName, String lastName, String phoneNumber){
         if (this.status == UserStatus.DELETED){
-            throw new IllegalArgumentException("Cannot update a deleted user");
+            throw new IllegalStateException("Cannot update a deleted user");
         }
 
         if (firstName == null || firstName.isBlank()){
